@@ -1,0 +1,4 @@
+{
+    "port" : ["$REDIS_PORT_6739_TCP_PORT", 6379],
+    "server" : ["$REDIS_PORT_6739_TCP_ADDR", "127.0.0.1"]
+}

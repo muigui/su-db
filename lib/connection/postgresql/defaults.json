@@ -1,0 +1,7 @@
+{
+    "pool" : false,
+    "port" : ["$POSTGRES_PORT_5432_TCP_PORT", 5432],
+    "pwd" : "$PG_PASS",
+    "server" : ["$POSTGRES_PORT_5432_TCP_ADDR", "127.0.0.1"],
+    "user" : "$PG_USER"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "su-q2",
+  "version": "0.1.0",
+  "description": "super useful wrapper to database querying stuff and the like",
+  "dependencies": {
+    "JSONStream": "x",
+    "co": "x",
+    "co-mongo": "x",
+    "co-pg": "1.3.x",
+    "co-redis": "x",
+    "config": "x",
+    "config-file": "x",
+    "event-stream": "x",
+    "getenv": "^0.3.0",
+    "js-yaml": "x",
+    "moment-timezone": "0.2.x",
+    "mssql": "0.5.4",
+    "pg": "4.1.x",
+    "pg-query-stream": "0.7.x",
+    "redis": "x",
+    "redis-sentinel": "0.3.x",
+    "require-all": "x",
+    "sql": "0.39.x",
+    "super-func": "x",
+    "super-iter": "git+ssh://git@github.com:ibrokethat/iter.git#v0.1.0",
+    "through": "x",
+    "thunkify": "x",
+    "useful-copy": "x",
+    "useful-string": "x",
+    "useful-value": "x",
+    "yaml": "x"
+  },
+  "devDependencies": {
+    "assert": "*",
+    "should": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*",
+    "sinon-chai": "*",
+    "rewire": "2.0.x"
+  },
+  "main": "index.js",
+  "author": {
+    "Simon Jefford": "si@ibrokethat.com",
+    "Paul Graham": "grazanaut@gmail.com",
+    "Christos Constandinou": "constantology@gmail.com"
+  },
+  "license": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/super-useful/su-apiserver/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:super-useful/su-q.git"
+  },
+  "scripts": {
+    "test": "node --harmony ./node_modules/mocha/bin/_mocha --colors --recursive --ui tdd --reporter spec ./test --NODE_ENV=test",
+    "example": "export DB_PASSWORD='PASSWORD_YOU_SHOULD_KNOW' && node --harmony example.js"
+  },
+  "engines": {
+    "node": "0.11.x"
+  }
+}
