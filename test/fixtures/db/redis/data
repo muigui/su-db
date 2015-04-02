@@ -1,0 +1,3 @@
+SET foo bar
+SET bar baz
+SET baz bam

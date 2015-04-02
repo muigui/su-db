@@ -3,3 +3,6 @@
 docker build -t su-db-mongodb .
 
 docker run -i --name su-db-mongodb -p 27018:27017 -t -d su-db-mongodb
+
+echo "su-db.test.mongodb: importing test data";
+mongoimport --collection test --file ./data.json

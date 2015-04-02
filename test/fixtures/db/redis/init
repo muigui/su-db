@@ -3,3 +3,6 @@
 docker build -t su-db-redis .
 
 docker run -i --name su-db-redis -p 6380:6379 -t -d su-db-redis
+
+echo "su-db.test.redis: importing test data";
+cat ./data.txt | redis-cli -p 6380 --pipe
