@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t su-db-mongodb .
+
+docker run -i --name su-db-mongodb -p 27018:27017 -t -d su-db-mongodb

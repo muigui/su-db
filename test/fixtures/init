@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd ./redis
+
+echo "su-db.test: initialising redis test container";
+
+./init
+
+cd ../
+
+echo "su-db.test: initialised redis test container";
+
+cd ./mongodb
+
+echo "su-db.test: initialising mongodb test container";
+
+./init
+
+cd ../
+
+echo "su-db.test: initialised mongodb test container";
+
+cd ./postgresql
+
+echo "su-db.test: initialising postgresql test container";
+
+./init
+
+cd ../
+
+echo "su-db.test: initialised postgresql test container";

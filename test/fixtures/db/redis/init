@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t su-db-redis .
+
+docker run -i --name su-db-redis -p 6380:6379 -t -d su-db-redis

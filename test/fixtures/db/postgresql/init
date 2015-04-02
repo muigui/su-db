@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t su-db-postgresql .
+
+docker run -i --name su-db-postgresql -p 5433:5432 -t -d su-db-postgresql
