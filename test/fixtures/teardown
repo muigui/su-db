@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd ./redis
+
+echo "su-db.test: tearing down redis test container";
+
+./teardown
+
+cd ../
+
+echo "su-db.test: finished tearing down redis test container";
+
+cd ./mongodb
+
+echo "su-db.test: tearing down mongodb test container";
+
+./teardown
+
+cd ../
+
+echo "su-db.test: finished tearing down mongodb test container";
+
+cd ./postgresql
+
+echo "su-db.test: tearing down postgresql test container";
+
+./teardown
+
+cd ../
+
+echo "su-db.test: finished tearing down postgresql test container";
