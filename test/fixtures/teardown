@@ -1,31 +1,12 @@
 #!/bin/bash
 
-cd ./redis
-
 echo "su-db.test: tearing down redis test container";
-
-./teardown
-
-cd ../
-
-echo "su-db.test: finished tearing down redis test container";
-
-cd ./mongodb
+docker stop su-db-mongodb | xargs docker rm;
 
 echo "su-db.test: tearing down mongodb test container";
-
-./teardown
-
-cd ../
-
-echo "su-db.test: finished tearing down mongodb test container";
-
-cd ./postgresql
+docker stop su-db-postgresql | xargs docker rm;
 
 echo "su-db.test: tearing down postgresql test container";
+docker stop su-db-redis | xargs docker rm;
 
-./teardown
-
-cd ../
-
-echo "su-db.test: finished tearing down postgresql test container";
+echo "all containers go bye bye!";
