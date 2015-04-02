@@ -56,6 +56,8 @@
     "url": "git@github.com:super-useful/su-q.git"
   },
   "scripts": {
+    "pretest" : "cd ./test/fixtures && ./setup",
+    "posttest" : "cd ./test/fixtures && ./teardown",
     "test": "node --harmony ./node_modules/mocha/bin/_mocha --colors --recursive --ui tdd --reporter spec ./test --NODE_ENV=test",
     "example": "export DB_PASSWORD='PASSWORD_YOU_SHOULD_KNOW' && node --harmony example.js"
   },
