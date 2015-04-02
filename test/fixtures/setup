@@ -4,7 +4,7 @@ cd ./redis
 
 echo "su-db.test: initialising redis test container";
 
-./init
+./setup
 
 cd ../
 
@@ -14,7 +14,7 @@ cd ./mongodb
 
 echo "su-db.test: initialising mongodb test container";
 
-./init
+./setup
 
 cd ../
 
@@ -24,7 +24,7 @@ cd ./postgresql
 
 echo "su-db.test: initialising postgresql test container";
 
-./init
+./setup
 
 cd ../
 
