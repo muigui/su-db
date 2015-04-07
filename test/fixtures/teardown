@@ -2,11 +2,14 @@
 
 echo "su-db.test: tearing down redis test container";
 docker stop su-db-mongodb | xargs docker rm;
+docker rmi su-db-mongodb
 
 echo "su-db.test: tearing down mongodb test container";
 docker stop su-db-postgresql | xargs docker rm;
+docker rmi su-db-postgresql
 
 echo "su-db.test: tearing down postgresql test container";
 docker stop su-db-redis | xargs docker rm;
+docker rmi su-db-redis
 
 echo "all containers go bye bye!";
