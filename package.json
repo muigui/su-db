@@ -35,6 +35,7 @@
     "should": "*",
     "mocha": "*",
     "chai": "*",
+    "co-thunkify": "git+ssh://git@github.com:super-useful/co-thunkify.git",
     "sinon": "*",
     "sinon-chai": "*",
     "rewire": "2.0.x"
