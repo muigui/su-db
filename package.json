@@ -1,5 +1,5 @@
 {
-  "name": "su-q2",
+  "name": "su-db",
   "version": "0.1.0",
   "description": "super useful wrapper to database querying stuff and the like",
   "dependencies": {
