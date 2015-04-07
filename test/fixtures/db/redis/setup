@@ -1,8 +1,10 @@
 #!/bin/bash
 
-docker build -t su-db-redis .
+docker_host=`echo "console.log(require('url').parse(process.env.DOCKER_HOST).hostname)" | node`
+
+docker build -q -t su-db-redis .
 
 docker run -i --name su-db-redis -p 6380:6379 -t -d su-db-redis
 
 echo "su-db.test.redis: importing test data";
-cat ./data.txt | redis-cli -p 6380 --pipe
+echo "console.log(require('./data.json').map(function(item) { return 'SET ' + item.join(' '); }).join('\r\n'))" | node | redis-cli -h $docker_host -p 6380 --pipe

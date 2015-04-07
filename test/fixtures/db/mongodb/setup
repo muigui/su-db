@@ -1,8 +1,10 @@
 #!/bin/bash
 
-docker build -t su-db-mongodb .
+docker_host=`echo "console.log(require('url').parse(process.env.DOCKER_HOST).hostname)" | node`
 
-docker run -i --name su-db-mongodb -p 27018:27017 -t -d su-db-mongodb
+docker build -q -t su-db-mongodb .
+
+docker run --name su-db-mongodb -p 27018:27017 -d su-db-mongodb
 
 echo "su-db.test.mongodb: importing test data";
-mongoimport --collection test --file ./data.json
+mongoimport --host $docker_host --port 27018 --db test --collection test --file ./data.json --jsonArray

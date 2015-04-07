@@ -1,11 +1,15 @@
 #!/bin/bash
 
-docker build -t su-db-postgresql .
+docker_host=`echo "console.log(require('url').parse(process.env.DOCKER_HOST).hostname)" | node`
 
-docker run -i --name su-db-postgresql -p 5433:5432 -t -d su-db-postgresql
+docker build -q -t su-db-postgresql .
+
+docker run --name su-db-postgresql -p 5433:5432 -d su-db-postgresql
+
+sleep 5;
 
 echo "su-db.test.postgresql: importing test schema";
-export PGPASSWORD="test" && psql -U test -d test -h 127.0.0.1 -p 5433 -f ./schema.sql;
+export PGPASSWORD="test" && psql -U test -d test -h $docker_host -p 5433 -f ./schema.sql;
 
 echo "su-db.test.postgresql: importing test data";
-export PGPASSWORD="test" && psql -U test -d test -h 127.0.0.1 -p 5433 -f ./data.sql;
+export PGPASSWORD="test" && psql -U test -d test -h $docker_host -p 5433 -f ./data.sql;
