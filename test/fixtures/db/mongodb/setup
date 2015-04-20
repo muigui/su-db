@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $(docker-machine env super-useful)
+
 docker_host=`echo "console.log(require('url').parse(process.env.DOCKER_HOST).hostname)" | node`
 
 docker build -q -t su-db-mongodb .
