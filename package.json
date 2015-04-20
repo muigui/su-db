@@ -43,7 +43,6 @@
   "main": "index.js",
   "author": {
     "Simon Jefford": "si@ibrokethat.com",
-    "Paul Graham": "grazanaut@gmail.com",
     "Christos Constandinou": "constantology@gmail.com"
   },
   "license": [
@@ -59,7 +58,7 @@
   "scripts": {
     "pretest" : "cd ./test/fixtures && ./setup",
     "posttest" : "cd ./test/fixtures && ./teardown",
-    "test": "node --harmony ./node_modules/mocha/bin/_mocha --colors --recursive --ui tdd --reporter spec ./test --NODE_ENV=test",
+    "test": "node --harmony ./node_modules/mocha/bin/_mocha --colors --harmony --recursive --reporter spec --ui tdd ./test/**/*.test.js --NODE_ENV=test",
     "example": "export DB_PASSWORD='PASSWORD_YOU_SHOULD_KNOW' && node --harmony example.js"
   },
   "engines": {
