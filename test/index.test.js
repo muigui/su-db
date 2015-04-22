@@ -24,6 +24,14 @@ suite('su-db', function() {
         }));
     });
 
+    suite('rethinkdb', function() {
+        test('query', cothunkify(function* () {
+            var res = yield db.test_rethink.query();
+
+            expect(res).to.equal('your time is up I no longer want to play for you !');
+        }));
+    });
+
     suite('postgresql', function() {
         test('query', cothunkify(function* () {
             var res = yield db.test_pg.query();

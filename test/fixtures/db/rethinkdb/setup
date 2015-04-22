@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# $(docker-machine env super-useful)
+
+docker_host=`echo "console.log(require('url').parse(process.env.DOCKER_HOST).hostname)" | node`
+
+docker build -q -t su-db-rethinkdb .
+
+docker run --name su-db-rethinkdb -p 28016:28015 -p 29016:29015 -p 8090:8080 -d su-db-rethinkdb
+
+echo "su-db.test.rethinkdb: importing test data";
+rethinkdb import -c $docker_host:28016 -f data.json --table test.test

@@ -20,6 +20,16 @@ cd ../../
 
 echo "su-db.test: initialised mongodb test container";
 
+cd ./db/rethinkdb
+
+echo "su-db.test: initialising rethinkdb test container";
+
+./setup
+
+cd ../../
+
+echo "su-db.test: initialised rethinkdb test container";
+
 cd ./db/postgresql
 
 echo "su-db.test: initialising postgresql test container";

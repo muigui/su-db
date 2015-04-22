@@ -28,6 +28,18 @@ module.exports = [{
         query : require('./db/mongodb/query')
     }
 }, {
+    alias : 'test_rethink',
+    type : 'rethinkdb',
+    connection : {
+        name : 'test',
+        port : 28016,
+        server : server
+    },
+    queries : {
+        test : require('../rethinkdb.test'),
+        query : require('./db/rethinkdb/query')
+    }
+}, {
     alias : 'test_redis',
     type : 'redis',
     connection : {
