@@ -12,7 +12,7 @@ module.exports = [{
         user : 'test'
     },
     queries : {
-        test : require('../postgresql.test'),
+        //test : require('../postgresql.test'),
         query : require('./db/postgresql/query')
     }
 }, {
@@ -24,7 +24,7 @@ module.exports = [{
         server : server
     },
     queries : {
-        test : require('../mongodb.test'),
+        //test : require('../mongodb.test'),
         query : require('./db/mongodb/query')
     }
 }, {
@@ -36,7 +36,7 @@ module.exports = [{
         server : server
     },
     queries : {
-        test : require('../rethinkdb.test'),
+        //test : require('../rethinkdb.test'),
         query : require('./db/rethinkdb/query')
     }
 }, {
@@ -47,7 +47,7 @@ module.exports = [{
         server : server
     },
     queries : {
-        test : require('../redis.test'),
+        //test : require('../redis.test'),
         query : require('./db/redis/query')
     }
 }];
