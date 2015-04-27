@@ -22,7 +22,6 @@
     "require-all": "x",
     "rethinkdbdash": "2.0.x",
     "sql": "0.39.x",
-    "super-func": "x",
     "super-iter": "git+ssh://git@github.com:ibrokethat/iter.git#v0.1.0",
     "through": "x",
     "thunkify": "x",
